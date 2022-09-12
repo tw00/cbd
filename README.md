@@ -1,4 +1,4 @@
-# Experimental Implementation for CBD
+# Experimental implementation CBD
 
 This is an experimanl implementation of component based deployments,
 see this [blog post](https://tw00.dev/post/component-based-deployment/).

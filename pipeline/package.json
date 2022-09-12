@@ -1,0 +1,25 @@
+{
+  "name": "cbd-build-pipeline",
+  "version": "1.0.0",
+  "author": "Thomas Weustenfeld",
+  "description": "",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "publish": "./bin/publish.js"
+  },
+  "scripts": {
+    "publish": "$npm_package_bin_publish",
+    "build:components": "esbuild components/*.jsx --format=esm --bundle --external:react --external:react-dom --target=chrome105 --outdir=build/components/",
+    "build:react": "esbuild react.jsx --format=esm --bundle --target=chrome105 --outfile=build/react.js",
+    "build:server": "esbuild server.jsx --bundle --external:react --external:react-dom --target=esnext --jsx=automatic --outfile=build/node.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.7"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

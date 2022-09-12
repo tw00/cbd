@@ -1,0 +1,29 @@
+{
+  "name": "cbd-backend",
+  "version": "1.0.0",
+  "description": "CBD Backend",
+  "author": "Thomas Weustenfeld",
+  "license": "MIT",
+  "private": true,
+  "main": "src/server.js",
+  "type": "module",
+  "bin": {
+    "delete": "./bin/delete.js",
+    "dump": "./bin/dump.js",
+    "seed": "./bin/seed.js"
+  },
+  "scripts": {
+    "delete": "$npm_package_bin_delete",
+    "dump": "$npm_package_bin_dump",
+    "seed": "$npm_package_bin_seed",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.4.1",
+    "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
+    "levelup": "^5.1.1",
+    "rocksdb": "^5.2.1"
+  }
+}
