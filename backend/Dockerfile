@@ -1,4 +1,10 @@
-FROM node:18-alpine
+FROM node:18-alpine AS base
+WORKDIR /app
+
+# -----------------------------------------------------------------------------
+# Builder stage
+# -----------------------------------------------------------------------------
+FROM base AS builder
 
 # Install python/pip
 ENV PYTHONUNBUFFERED=1
@@ -9,9 +15,14 @@ RUN pip3 install --no-cache --upgrade pip setuptools
 # Install make
 RUN apk add g++ && apk add make
 
-WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm ci --build-from-source
+
+# -----------------------------------------------------------------------------
+# Run stage
+# -----------------------------------------------------------------------------
+FROM base AS runtime
+COPY --from=builder /app/ .
 COPY . .
 EXPOSE 9300
 CMD [ "node", "src/server.js" ]

@@ -3,6 +3,8 @@
 This is an experimanl implementation of component based deployments,
 see this [blog post](https://tw00.dev/post/component-based-deployment/).
 
+Live demo: https://pi.tw00.dev/
+
 ## How to get started
 
 1. Start backend

@@ -3,3 +3,6 @@ _backup
 
 # Build folders
 pipeline/build
+
+# DB
+backend/db
