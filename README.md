@@ -29,9 +29,9 @@ The backend uses a persistent key-value store ([levelDB](https://github.com/Leve
 curl -i 'http://localhost:9300/?id=image'
 ```
 
-which returns `Content-Type: application/javascript; charset=utf-8` so it can be used with `<script>` tag.
+which returns `Content-Type: application/javascript; charset=utf-8` so it can be used with a `<script>` tag.
 
-The frontend uses [native ES modules](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) to import modules in the browser directyl from a URL.
+The frontend uses [native ES modules](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/) to import modules in the browser directly from a URL.
 The page is driven by the page data defined in `frontend/static/data/page.js`. A minimal `packageSelector` in `frontend/static/js/main.js` then iterates over the page data, checks which modules are needed, loads them via dynamic browser-side import `` await import(`http://localhost:9300/?id=${type}`) ``, and finally renders them via `React.createElement`.
 
 ## How to get started locally
