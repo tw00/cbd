@@ -2,7 +2,8 @@ import { React, ReactDOM } from "./react.js";
 import pageData from "/data/page.js";
 
 const h = React.createElement;
-const endpoint = "http://localhost:9300/";
+// const endpoint = "http://localhost:9300/";
+const endpoint = "/backend/";
 
 function hash(obj) {
   return JSON.stringify(obj)
