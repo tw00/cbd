@@ -5,7 +5,13 @@ see this [blog post](https://tw00.dev/post/component-based-deployment/).
 
 Live demo: https://pi.tw00.dev/
 
-## How to get started
+## Publish component
+
+1. Make change to `pipeline/components/text.jsx`
+2. Run `(cd pipeline && ./bin/publish.js components/text.jsx)`
+3. Check updated page: https://pi.tw00.dev/
+
+## How to get started locally
 
 1. Start backend
 
